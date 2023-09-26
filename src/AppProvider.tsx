@@ -15,7 +15,6 @@ import Home from './Screens/Home';
 import Reflectly from './Screens/Reflectly';
 import {darkTheme, theme, useColorScheme} from './common/contexts/theme';
 import StikyShapes from './Screens/StikyShapes';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 const Stack = createNativeStackNavigator();
 
@@ -34,7 +33,7 @@ export default (): JSX.Element => {
       <NavigationContainer>
         <Reflectly>
           <Stack.Navigator
-            initialRouteName={SCREEN_NAMES.HOME}
+            initialRouteName={SCREEN_NAMES.STICKY}
             screenOptions={{headerShown: false, animation: 'fade'}}>
             <Stack.Screen name={SCREEN_NAMES.HOME} component={Home} />
             <Stack.Screen name={SCREEN_NAMES.STICKY} component={StikyShapes} />

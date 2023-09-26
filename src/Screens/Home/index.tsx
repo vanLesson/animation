@@ -49,13 +49,6 @@ export default () => {
   const [index, setIndex] = useState(0);
   const prev = slides[index - 1];
   const next = slides[index + 1];
-  const navigation = useNavigation();
-  useEffect(() => {
-    if (index === 4) {
-      // @ts-ignore
-      navigation.navigate(SCREEN_NAMES.REFLECTLY);
-    }
-  }, [index, navigation]);
   return (
     <Slider
       key={index}

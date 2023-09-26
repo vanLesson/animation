@@ -1,5 +1,5 @@
 import React from 'react';
-import {Dimensions, StyleSheet, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {useSharedValue} from 'react-native-reanimated';
 
 import Tabbar from './components/Tabbar';
@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#f5eeee',
   },
 });
-const Reflectly = ({children}) => {
+const Reflectly = ({children}: {children: JSX.Element}) => {
   const open = useSharedValue(0);
   const {colorScheme} = useColorScheme();
 
