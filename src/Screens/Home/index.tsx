@@ -5,7 +5,6 @@ import Slide from './components/Slide';
 import {useNavigation} from '@react-navigation/native';
 import {SCREEN_NAMES} from '../../Constants';
 import {useColorScheme} from '../../common/contexts/theme';
-import Reflectly from '../Reflectly';
 
 export default () => {
   const {colorScheme} = useColorScheme();

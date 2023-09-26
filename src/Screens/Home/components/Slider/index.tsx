@@ -107,7 +107,7 @@ export default ({
   }, [left.x, right.x]);
   return (
     <PanGestureHandler onGestureEvent={onGestureEvent}>
-      <Animated.View style={[StyleSheet.absoluteFill, {zIndex: -1}]}>
+      <Animated.View style={[StyleSheet.absoluteFill]}>
         {current}
         {prev && (
           <Animated.View style={[StyleSheet.absoluteFill, leftStyle]}>

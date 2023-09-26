@@ -31,6 +31,10 @@ const StaticTabbar = ({colorScheme}: {colorScheme: ColorShema}) => {
     // @ts-ignore
     navigation.navigate(SCREEN_NAMES.STICKY);
   };
+  const onSlider = () => {
+    // @ts-ignore
+    navigation.navigate(SCREEN_NAMES.HOME);
+  };
   return (
     <View
       style={[
@@ -40,7 +44,7 @@ const StaticTabbar = ({colorScheme}: {colorScheme: ColorShema}) => {
           ? {backgroundColor: 'white'}
           : {backgroundColor: 'black'},
       ]}>
-      <TouchableOpacity onPress={() => {}}>
+      <TouchableOpacity onPress={onSlider}>
         <HomeIcon />
       </TouchableOpacity>
       <TouchableOpacity onPress={() => {}}>

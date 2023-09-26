@@ -31,21 +31,16 @@ export default (): JSX.Element => {
 
   return (
     <GestureHandlerRootView style={[backgroundStyle, {flex: 1}]}>
-      <SafeAreaProvider style={{flex: 1}}>
-        <NavigationContainer>
-          <Reflectly>
-            <Stack.Navigator
-              initialRouteName={SCREEN_NAMES.HOME}
-              screenOptions={{headerShown: false}}>
-              <Stack.Screen name={SCREEN_NAMES.HOME} component={Home} />
-              <Stack.Screen
-                name={SCREEN_NAMES.STICKY}
-                component={StikyShapes}
-              />
-            </Stack.Navigator>
-          </Reflectly>
-        </NavigationContainer>
-      </SafeAreaProvider>
+      <NavigationContainer>
+        <Reflectly>
+          <Stack.Navigator
+            initialRouteName={SCREEN_NAMES.HOME}
+            screenOptions={{headerShown: false, animation: 'fade'}}>
+            <Stack.Screen name={SCREEN_NAMES.HOME} component={Home} />
+            <Stack.Screen name={SCREEN_NAMES.STICKY} component={StikyShapes} />
+          </Stack.Navigator>
+        </Reflectly>
+      </NavigationContainer>
     </GestureHandlerRootView>
   );
 };

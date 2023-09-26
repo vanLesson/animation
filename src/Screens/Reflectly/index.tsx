@@ -1,10 +1,11 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {Dimensions, StyleSheet, View} from 'react-native';
 import {useSharedValue} from 'react-native-reanimated';
 
 import Tabbar from './components/Tabbar';
 import Backdrop from './components/Backdrop';
 import {darkTheme, theme, useColorScheme} from '../../common/contexts/theme';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 const styles = StyleSheet.create({
   container: {
@@ -24,11 +25,15 @@ const Reflectly = ({children}) => {
         : theme.colors.mainBackground,
   };
   return (
-    <View style={[styles.container, backgroundStyle]}>
-      {children}
-      <Backdrop open={open} />
-      <Tabbar open={open} />
-    </View>
+    <SafeAreaProvider style={{flex: 1}}>
+      <View style={[styles.container, backgroundStyle]}>
+        {children}
+        <Backdrop open={open} />
+        <View style={{bottom: 0, position: 'absolute'}}>
+          <Tabbar open={open} />
+        </View>
+      </View>
+    </SafeAreaProvider>
   );
 };
 

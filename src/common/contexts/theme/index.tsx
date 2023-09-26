@@ -37,6 +37,7 @@ const palette = {
   white: '#F0F2F3',
   lightGray: 'rgba(0, 0, 0, 0.04)',
   darkGray: '#3B3B3B',
+  pink: '#F2A1AD',
 };
 export const theme = {
   colorScheme: 'light',
@@ -44,6 +45,7 @@ export const theme = {
     mainBackground: palette.white,
     mainForeground: palette.black,
     secondaryBackground: palette.lightGray,
+    pinkBackGround: palette.pink,
   },
   spacing: {
     s: 8,
