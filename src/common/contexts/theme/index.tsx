@@ -115,7 +115,7 @@ const defaultValue: ColorScheme = {
 const {width, height} = Dimensions.get('window');
 
 const ColorSchemeContext = createContext<ColorSchemeContext | null>(null);
-const wait = async (ms: number) =>
+export const wait = async (ms: number) =>
   new Promise(resolve => setTimeout(resolve, ms));
 const corners = [vec(0, 0), vec(width, 0), vec(width, height), vec(0, height)];
 
@@ -129,6 +129,7 @@ export const useColorScheme = () => {
     throw new Error('No ColorScheme context context found');
   }
   const {colorScheme, dispatch, circle, transition, active, ref} = ctx;
+
   const toggle = useCallback(
     async (x: number, y: number) => {
       const newColorScheme = colorScheme === 'light' ? 'dark' : 'light';

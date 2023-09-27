@@ -6,6 +6,7 @@ import Tabbar from './components/Tabbar';
 import Backdrop from './components/Backdrop';
 import {darkTheme, theme, useColorScheme} from '../../common/contexts/theme';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
+import GradientBackground from '../GradientBackground';
 
 const styles = StyleSheet.create({
   container: {
@@ -29,6 +30,7 @@ const Reflectly = ({children}: {children: JSX.Element}) => {
       <View style={[styles.container, backgroundStyle]}>
         {children}
         <Backdrop open={open} />
+        {/*{<GradientBackground />}*/}
         <View style={{bottom: 0, position: 'absolute'}}>
           <Tabbar open={open} />
         </View>

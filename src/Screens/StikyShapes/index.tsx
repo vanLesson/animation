@@ -1,8 +1,7 @@
-import {Dimensions, StyleSheet, View} from 'react-native';
+import {Dimensions, StyleSheet} from 'react-native';
 import Stik, {MAX_HEIGHT, SIZE} from './components/Stik';
 import Animated, {
   Extrapolate,
-  Extrapolation,
   interpolate,
   useAnimatedGestureHandler,
   useAnimatedStyle,
@@ -49,6 +48,7 @@ export default () => {
         });
       },
     });
+  // @ts-ignore
   const container = useAnimatedStyle(() => {
     return {
       transform: [
