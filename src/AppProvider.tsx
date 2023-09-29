@@ -35,15 +35,15 @@ export default (): JSX.Element => {
       <NavigationContainer>
         <Reflectly>
           <Stack.Navigator
-            initialRouteName={SCREEN_NAMES.HOME}
+            initialRouteName={SCREEN_NAMES.INTRO}
             screenOptions={{headerShown: false, animation: 'fade'}}>
             <Stack.Screen name={SCREEN_NAMES.HOME} component={Home} />
             <Stack.Screen name={SCREEN_NAMES.STICKY} component={StikyShapes} />
             <Stack.Screen name={SCREEN_NAMES.INTRO} component={Intro} />
-            <Stack.Screen
-              name={SCREEN_NAMES.BACKGROUND}
-              component={GradientBackground}
-            />
+            {/*<Stack.Screen*/}
+            {/*  name={SCREEN_NAMES.BACKGROUND}*/}
+            {/*  component={GradientBackground}*/}
+            {/*/>*/}
           </Stack.Navigator>
         </Reflectly>
       </NavigationContainer>

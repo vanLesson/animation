@@ -45,10 +45,11 @@ interface IBluer {
   children: ReactNode | ReactNode[];
   mask: ReactNode;
 }
+
 export default ({children, mask}: IBluer) => {
   return (
     <Fill>
-      <Shader uniforms={{iResolution: [WIDTH, HEIGHT]}} source={shader}>
+      <Shader uniforms={{iResolution: [100, 100]}} source={shader}>
         {children}
         {mask}
       </Shader>

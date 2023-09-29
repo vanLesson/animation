@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
 });
 
 const Row = ({label, children}: RowProps) => {
-  const {toggle, active} = useColorScheme();
+  const {toggle, active, saveOverlay} = useColorScheme();
 
   const pan = Gesture.Pan()
     .runOnJS(true)

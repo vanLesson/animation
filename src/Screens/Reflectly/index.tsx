@@ -30,7 +30,7 @@ const Reflectly = ({children}: {children: JSX.Element}) => {
       <View style={[styles.container, backgroundStyle]}>
         {children}
         <Backdrop open={open} />
-        {/*{<GradientBackground />}*/}
+        {/*<GradientBackground open={open} />*/}
         <View style={{bottom: 0, position: 'absolute'}}>
           <Tabbar open={open} />
         </View>

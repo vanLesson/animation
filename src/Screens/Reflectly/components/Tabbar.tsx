@@ -14,7 +14,6 @@ import Animated, {
   interpolate,
   useAnimatedProps,
   useAnimatedStyle,
-  withTiming,
 } from 'react-native-reanimated';
 
 import StaticTabbar, {SIZE} from './StaticTabbar';
@@ -125,6 +124,8 @@ const Tabbar = ({open}: TabbarProps) => {
       transform: [{translateY: mix(open.value, HEIGHT + insets.bottom, 0)}],
     };
   });
+  const {saveOverlay} = useColorScheme();
+
   return (
     <>
       <View>
@@ -166,8 +167,8 @@ const Tabbar = ({open}: TabbarProps) => {
             </Svg>
           </View>
           <TouchableOpacity
-            onPress={() => {
-              open.value = withTiming(open.value === 1 ? 0 : 1);
+            onPress={async () => {
+              await saveOverlay();
             }}
             style={[styles.overlay, {paddingBottom: insets.bottom}]}>
             <Animated.View style={[styles.icon, icon]}>
